@@ -9,11 +9,11 @@ const MenuItem = styled(ListItem)({
   width: 'auto',
   '& a': {
     textDecoration: 'none',
-    color: Colors.text[400],
     fontSize: 16,
     fontWeight: 600,
     display: 'inline-block',
     width: 'auto',
+    color: Colors.text[400],
   },
   '& a:hover': {
     transition: 'all ease 0.5s',
