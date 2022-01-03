@@ -1,5 +1,5 @@
-import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
-import { createWrapper, MakeStore } from 'next-redux-wrapper'
+import { configureStore } from '@reduxjs/toolkit'
+import { createWrapper } from 'next-redux-wrapper'
 import reducer from './reducers'
 import {
   persistReducer,
@@ -11,27 +11,24 @@ import {
   REGISTER,
 } from 'redux-persist'
 import storage from './storage'
-
-export interface AppState {
-  metadata: any
-  common: any
-}
+import { routerMiddleware } from './middleware/routerMiddleware'
 
 /**
  * initStore
  * Initialise and export redux store
  */
-const initStore: MakeStore<AppState> = () => {
+const initStore = () => {
   const isServer = typeof window === 'undefined'
 
   if (isServer) {
     return configureStore({
       reducer,
-      middleware: getDefaultMiddleware({
-        serializableCheck: {
-          ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-        },
-      }),
+      middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware({
+          serializableCheck: {
+            ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+          },
+        }),
     })
   } else {
     const persistConfig = {
@@ -43,11 +40,12 @@ const initStore: MakeStore<AppState> = () => {
     const persistedReducer = persistReducer(persistConfig, reducer)
     const store = configureStore({
       reducer: persistedReducer,
-      middleware: getDefaultMiddleware({
-        serializableCheck: {
-          ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-        },
-      }),
+      middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware({
+          serializableCheck: {
+            ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+          },
+        }).prepend(routerMiddleware),
     })
 
     return store

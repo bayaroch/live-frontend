@@ -16,6 +16,7 @@ import '@css/main.scss'
 import { StylesProvider } from '@mui/styles'
 import { ConfirmProvider } from '@components/Confirm'
 import { defaultConfirmationOptions } from '@constants/common.constants'
+import '@locales/i18n'
 
 moment.locale('mn')
 
@@ -35,7 +36,7 @@ type Props = AppProps & {
 const CustomApp = ({ Component, pageProps }: Props) => {
   const Layout = Component.Layout ? Component.Layout : React.Fragment
   const store: StoreType = useStore()
-  authorizationProvider()
+  authorizationProvider(store)
 
   useEffect(() => {
     // Remove the server-side injected CSS.

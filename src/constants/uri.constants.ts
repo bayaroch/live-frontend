@@ -1,7 +1,10 @@
-const DOMAIN = process.env.NEXT_PUBLIC_API
-const REST_API_PATH = '/v2/'
-const API_ROOT = DOMAIN + REST_API_PATH
+const API = process.env.NEXT_PUBLIC_API
 
 export const URI = {
-  ALL_POSTS: API_ROOT + 'posts',
+  API,
+  LOGIN: API + 'auth/login',
+  LOGOUT: API + 'auth/signout',
+  REGISTER: API + 'auth/signup',
+  CONFIRM: API + 'auth/confirm',
+  REFRESH: API + 'auth/refresh',
 }

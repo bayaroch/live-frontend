@@ -9,7 +9,7 @@ import {
 
 const Home: React.FC = () => {
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="lg" sx={{ padding: { sm: 0, xs: 0 } }}>
       <Box
         sx={{
           display: 'flex',
@@ -17,7 +17,9 @@ const Home: React.FC = () => {
           flex: 1,
           flexDirection: 'column',
           background: "url('/images/gradient.png') top center",
-          minHeight: 1000,
+          paddingRight: 1,
+          paddingLeft: 1,
+          minHeight: 900,
         }}
       >
         <Typography pt={10} align="center" variant="h1">
@@ -45,7 +47,8 @@ const Home: React.FC = () => {
             borderRadius: 2,
             background: "url('/images/demo.png') center center",
             backgroundSize: 'cover',
-            width: 750,
+            maxWidth: 750,
+            width: '100%',
             boxShadow: 6,
             overflow: 'hidden',
           }}

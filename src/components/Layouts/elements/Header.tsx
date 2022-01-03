@@ -53,8 +53,8 @@ const Header: React.FC<HeaderProps> = ({ isLogged }) => {
             paddingRight: 2,
             paddingLeft: 2,
             display: {
-              xs: 'none',
-              sm: 'none',
+              xs: 'flex',
+              sm: 'flex',
               md: 'flex',
             },
           }}
@@ -70,7 +70,7 @@ const Header: React.FC<HeaderProps> = ({ isLogged }) => {
             display: {
               xs: 'none',
               sm: 'none',
-              md: 'none',
+              md: 'flex',
               lg: 'flex',
               xl: 'flex',
             },

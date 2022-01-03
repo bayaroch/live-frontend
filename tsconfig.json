@@ -27,7 +27,8 @@
       "@constants/*": ["./src/constants/*"],
       "@services/*": ["./src/services/*"],
       "@utils/*": ["./src/utils/*"],
-      "@theme/*": ["./src/theme/*"]
+      "@theme/*": ["./src/theme/*"],
+      "@locales/*": ["./src/locales/*"]
     },
     "forceConsistentCasingInFileNames": true,
     "noEmit": false,

@@ -2,6 +2,7 @@ import { combineReducers, Reducer } from 'redux'
 import metadata from '@store/metadata'
 import { HYDRATE } from 'next-redux-wrapper'
 import common from './common'
+import auth from './auth'
 
 export interface AppState {
   metadata: any
@@ -10,6 +11,7 @@ export interface AppState {
 const combinedReducers = combineReducers({
   metadata: metadata.reducer,
   common: common.reducers,
+  auth: auth.reducers,
 })
 
 const reducer: Reducer<any> = (state, action) => {
