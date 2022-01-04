@@ -14,5 +14,5 @@ export const currentUserId = createSelector(
 
 export const getIsAuthenticated = createSelector(
   getRoot,
-  (state) => !!state.user?.payload?.access_token
+  (state) => !!state.user?.metadata?.accessToken
 )

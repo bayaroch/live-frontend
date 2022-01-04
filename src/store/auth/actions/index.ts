@@ -1,4 +1,4 @@
-import { createAsyncThunk } from '@reduxjs/toolkit'
+import { createAction, createAsyncThunk } from '@reduxjs/toolkit'
 import * as services from '@services/auth.services'
 import { AUTH_ACTION_TYPE } from './types'
 
@@ -37,21 +37,23 @@ export const registerByEmail = createAsyncThunk<
   }
 )
 
-// export const confirm = createAsyncThunk<void, services.UserConfirmParams>(
-//   AUTH_ACTION_TYPE.CONFIRM,
-//   async (confirmParams, { rejectWithValue }) => {
-//     try {
-//       const res = await services.confirm(confirmParams)
-//       return res
-//     } catch (err) {
-//       const error: any = err
-//       if (!error.response) {
-//         throw error
-//       }
-//       return rejectWithValue(error.response.data)
-//     }
-//   }
-// )
+export const logOut = createAction('auth/logOut')
+
+export const confirm = createAsyncThunk<void, services.UserConfirmParams>(
+  AUTH_ACTION_TYPE.CONFIRM,
+  async (confirmParams, { rejectWithValue }) => {
+    try {
+      const res = await services.confirm(confirmParams)
+      return res
+    } catch (err) {
+      const error: any = err
+      if (!error.response) {
+        throw error
+      }
+      return rejectWithValue(error.response.data)
+    }
+  }
+)
 
 // export const changePassword = createAsyncThunk<
 //   void,

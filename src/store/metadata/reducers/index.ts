@@ -28,7 +28,7 @@ export default function metadataReducer(
       updated = {
         pending: false,
         loaded: false,
-        error: action.payload?.error || action.error,
+        error: action.payload,
       }
       break
     case 'clear':

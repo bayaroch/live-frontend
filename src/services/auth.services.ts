@@ -32,6 +32,8 @@ export type UserRegisterParams = {
 export type UserRegisterResponse = {
   email: string
   id: string
+  name?: null | string
+  phone_number?: null | string
 }
 
 export type UserConfirmParams = {
@@ -64,10 +66,10 @@ export const register = async (
   return data
 }
 
-// export const confirm = async (params: UserConfirmParams): Promise<any> => {
-//   const { data } = await api.post<any>(URI.CONFIRM, params)
-//   return data
-// }
+export const confirm = async (params: UserConfirmParams): Promise<any> => {
+  const { data } = await api.get<any>(URI.CONFIRM, { params })
+  return data
+}
 
 // export const changePassword = async (
 //   params: UserChangePasswordParams

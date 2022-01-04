@@ -95,7 +95,9 @@ const Header: React.FC<HeaderProps> = ({ isLogged }) => {
               <Link href="/events">Үзэх</Link>
             </MenuItem>
             {isLogged ? (
-              <></>
+              <MenuItem>
+                <Link href="/logout">Гарах</Link>
+              </MenuItem>
             ) : (
               <MenuItem>
                 <Link href="/login">Нэвтрэх</Link>

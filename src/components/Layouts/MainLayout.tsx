@@ -3,10 +3,14 @@ import React from 'react'
 import Footer from './elements/Footer'
 import Header from './elements/Header'
 
-const MainLayout: React.FC = ({ children }) => {
+export type MainLayoutType = {
+  isLoggedIn?: boolean
+}
+
+const MainLayout: React.FC<MainLayoutType> = ({ isLoggedIn, children }) => {
   return (
     <Box>
-      <Header isLogged={false} />
+      <Header isLogged={isLoggedIn} />
       {children}
       <Footer />
     </Box>
