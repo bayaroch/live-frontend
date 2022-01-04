@@ -39,7 +39,7 @@ module.exports = {
           '@services': './src/services',
           '@utils': './src/utils',
           '@theme': './src/theme',
-          '@locales': ['./src/locales'],
+          '@locales': './src/locales',
         },
       },
     ],

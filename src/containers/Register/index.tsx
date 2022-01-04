@@ -68,6 +68,9 @@ const RegisterContainer: React.FC = () => {
 
   return (
     <Box>
+      <Typography variant="h3" align="center">
+        Бүртгүүлэх
+      </Typography>
       {!!registerMeta.error && errorStatusCode ? (
         <Box
           style={{

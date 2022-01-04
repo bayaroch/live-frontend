@@ -47,6 +47,9 @@ const LoginContainer: React.FC = () => {
 
   return (
     <Box>
+      <Typography variant="h3" align="center">
+        Нэвтрэх
+      </Typography>
       {!!loginEmailMeta.error ? (
         <Box
           style={{
