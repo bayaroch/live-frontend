@@ -38,7 +38,7 @@ const SubItem = ({ children, ...rest }: MenuItemProps) => {
   )
 }
 
-const AppNavigation: React.FC<AppNavigationProps> = () => {
+const AppNavigation: React.FC = () => {
   const [anchorEl, setAnchorEl] = useState(null)
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null)
 
