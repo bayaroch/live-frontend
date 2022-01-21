@@ -15,17 +15,11 @@ const initialState: StateType = {
 }
 
 export default createReducer(initialState, (builder) => {
-  builder.addCase(actions.update.fulfilled, (state) => {
-    state.update = undefined
-  })
   builder.addCase(actions.detail.fulfilled, (state, action) => {
     state.detail = action.payload
   })
   builder.addCase(actions.events.fulfilled, (state, action) => {
     state.list = action.payload.result // pagination later
     state.listCount = action.payload.count
-  })
-  builder.addCase(actions.update.fulfilled, (state) => {
-    state.update = undefined
   })
 })
