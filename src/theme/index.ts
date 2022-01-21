@@ -20,7 +20,7 @@ export default createTheme({
       main: Colors.secondary,
     },
     error: {
-      main: '#F7F735',
+      main: Colors.primary,
     },
     background: {
       default: Colors.background,

@@ -18,16 +18,18 @@ const UserLayout: React.FC<UserLayoutType> = ({ children }) => {
           palette: {
             ...theme.palette,
             mode: 'light',
+            background: {
+              paper: Colors.white,
+            },
+            text: {
+              primary: Colors.text[900],
+            },
           },
           components: {
             ...theme.components,
-            // Name of the component
             MuiButton: {
               styleOverrides: {
-                // Name of the slot
                 root: {
-                  // Some CSS
-                  color: Colors.white,
                   borderRadius: '2px',
                 },
               },
@@ -36,11 +38,16 @@ const UserLayout: React.FC<UserLayoutType> = ({ children }) => {
               styleOverrides: {
                 root: {
                   background: Colors.white,
-                  color: grey[500],
+                  color: grey[700],
                   border: `1px solid ${grey[200]}`,
                   fontSize: 16,
                   padding: '4px 8px',
                 },
+              },
+            },
+            MuiIconButton: {
+              styleOverrides: {
+                root: { color: grey[700] },
               },
             },
           },
