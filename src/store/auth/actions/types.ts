@@ -4,5 +4,4 @@ export enum AUTH_ACTION_TYPE {
   LOGOUT = 'auth/logout',
   REGISTER_BY_EMAIL = 'auth/registerByEmail',
   CONFIRM = 'auth/confirm',
-  CHANGE_PASSWORD = 'auth/changePassword',
 }

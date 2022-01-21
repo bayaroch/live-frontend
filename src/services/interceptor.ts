@@ -1,16 +1,20 @@
 /* eslint-disable @typescript-eslint/ban-types */
 import api from './api'
 import { StoreType } from '../store/store'
+import { AxiosRequestConfig } from 'axios'
 
 export const authorizationProvider = (store: StoreType): void => {
   api.interceptors.request.use(
-    (config) => {
+    (config: AxiosRequestConfig) => {
       const { auth } = store.getState()
       const user = auth.user
       if (user) {
-        const token = `Bearer ${user.payload.accessToken}`
+        const token = `Bearer ${user.metadata.accessToken}`
         if (token) {
-          config.headers.common.Authorization = `${token}`
+          if (config.headers === undefined) {
+            config.headers = {}
+          }
+          config.headers.Authorization = `${token}`
         }
       }
       return config

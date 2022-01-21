@@ -3,15 +3,20 @@ import metadata from '@store/metadata'
 import { HYDRATE } from 'next-redux-wrapper'
 import common from './common'
 import auth from './auth'
+import event from './event'
 
 export interface AppState {
   metadata: any
+  event: any
+  auth: any
+  common: any
 }
 
 const combinedReducers = combineReducers({
   metadata: metadata.reducer,
   common: common.reducers,
   auth: auth.reducers,
+  event: event.reducers,
 })
 
 const reducer: Reducer<any> = (state, action) => {

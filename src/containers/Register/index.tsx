@@ -64,14 +64,12 @@ const RegisterContainer: React.FC = () => {
     }
   }, [registerMeta])
 
-  const errorStatusCode = registerMeta.error.statusCode
-
   return (
     <Box>
       <Typography variant="h3" align="center">
         Бүртгүүлэх
       </Typography>
-      {!!registerMeta.error && errorStatusCode ? (
+      {!!registerMeta.error ? (
         <Box
           style={{
             height: '30px',
@@ -82,9 +80,9 @@ const RegisterContainer: React.FC = () => {
         >
           <ErrorOutlineIcon color="primary" sx={{ marginRight: 0.5 }} />
           <Typography color="primary" textAlign="center">
-            {errorStatusCode === 400
+            {/* {errorStatusCode === 400
               ? 'Something went wrong'
-              : t('error_messages.error_occurred')}
+              : t('error_messages.error_occurred')} */}
           </Typography>
         </Box>
       ) : (

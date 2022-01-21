@@ -1,11 +1,6 @@
 import StyledTextField from '@components/StyledTextField'
-import {
-  Box,
-  Button,
-  InputAdornment,
-  IconButton,
-  Typography,
-} from '@mui/material'
+import { Box, InputAdornment, IconButton, Typography } from '@mui/material'
+import { LoadingButton } from '@mui/lab'
 import { UserLoginParams } from '@services/auth.services'
 import _ from 'lodash'
 import { FieldValues } from 'react-hook-form'
@@ -81,7 +76,7 @@ const LoginContainer: React.FC = () => {
                 type="text"
                 fullWidth={true}
                 placeholder={t('login.email_placeholder')}
-                error={errors.email}
+                error={errors.email ? true : false}
                 helperText={errors.email ? errors.email.message : ''}
               />
             </Box>
@@ -119,29 +114,23 @@ const LoginContainer: React.FC = () => {
                   </InputAdornment>
                 }
                 placeholder={t('login.password_placeholder')}
-                error={errors.password}
+                error={errors.password ? true : false}
                 helperText={errors.password ? errors.password.message : ''}
               />
             </Box>
           )}
         />
         <Box mt={2}>
-          <Button
+          <LoadingButton
             type="submit"
             variant="contained"
+            loading={isLoading}
             fullWidth
             disabled={isLoading}
             sx={{ height: '36px' }}
           >
-            {isLoading ? (
-              <Box sx={{ position: 'absolute', top: '30px' }}>
-                {/* <Loader size="small" /> */}
-                Loading
-              </Box>
-            ) : (
-              t('login.button')
-            )}
-          </Button>
+            {t('login.button')}
+          </LoadingButton>
         </Box>
       </form>
     </Box>

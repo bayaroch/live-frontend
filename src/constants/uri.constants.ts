@@ -6,5 +6,6 @@ export const URI = {
   LOGOUT: '/auth/signout',
   REGISTER: '/auth/register',
   CONFIRM: '/auth/confirm',
-  REFRESH: '/auth/refresh',
+  EVENTS: '/events',
+  EVENT: '/events/:id',
 }

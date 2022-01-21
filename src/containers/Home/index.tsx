@@ -6,6 +6,7 @@ import {
   Box,
   ButtonGroup,
 } from '@mui/material'
+import Link from 'next/link'
 
 const Home: React.FC = () => {
   return (
@@ -31,9 +32,15 @@ const Home: React.FC = () => {
           зохион байгуулаарай
         </Typography>
         <ButtonGroup>
-          <Button sx={{ marginBottom: 4 }} variant="contained" color="primary">
-            Эвент үүсгэх
-          </Button>
+          <Link href={'/create'} passHref>
+            <Button
+              sx={{ marginBottom: 4 }}
+              variant="contained"
+              color="primary"
+            >
+              Эвент үүсгэх
+            </Button>
+          </Link>
           <Button
             sx={{ marginBottom: 4 }}
             variant="contained"
