@@ -127,12 +127,14 @@ const AppNavigation: React.FC = () => {
       onClose={handleMobileMenuClose}
     >
       <Link href="/create" passHref>
-        <SubItem>
-          <ListItemIcon>
-            <Publish fontSize="small" sx={{ color: '#333' }} />
-          </ListItemIcon>
-          <ListItemText> Эвент үүсгэх</ListItemText>
-        </SubItem>
+        <Box>
+          <SubItem>
+            <ListItemIcon>
+              <Publish fontSize="small" sx={{ color: '#333' }} />
+            </ListItemIcon>
+            <ListItemText> Эвент үүсгэх</ListItemText>
+          </SubItem>
+        </Box>
       </Link>
     </Menu>
   )

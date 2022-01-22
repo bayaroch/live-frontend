@@ -11,7 +11,6 @@ interface DateTimePickerProps {
     keyboardInputValue?: string | undefined
   ) => void
   value: string
-  ref: any
   title: string
 }
 
@@ -19,7 +18,7 @@ const DateTimePicker: React.FC<DateTimePickerProps> = ({
   title,
   onChange,
   value,
-  ref,
+  ...rest
 }) => {
   return (
     <LocalizationProvider locale={mn} dateAdapter={AdapterDateFns}>
@@ -48,10 +47,10 @@ const DateTimePicker: React.FC<DateTimePickerProps> = ({
         >
           <DesktopDatePicker
             label="Өдөр"
-            ref={ref}
             inputFormat="MM/dd/yyyy"
             value={value}
             onChange={onChange}
+            {...rest}
             renderInput={(params) => (
               <TextField
                 variant="standard"
@@ -65,10 +64,10 @@ const DateTimePicker: React.FC<DateTimePickerProps> = ({
           />
           <TimePicker
             label="Цаг"
-            ref={ref}
             value={value}
             ampm={false}
             onChange={onChange}
+            {...rest}
             renderInput={(params) => (
               <TextField
                 variant="standard"

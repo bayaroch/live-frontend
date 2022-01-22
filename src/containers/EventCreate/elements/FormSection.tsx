@@ -5,6 +5,7 @@ interface FormSectionProps extends CardProps {
   icon: ReactElement
   title: string
   subTitle?: string
+  action?: ReactElement
 }
 
 const FormSection: React.FC<FormSectionProps> = ({
@@ -12,6 +13,7 @@ const FormSection: React.FC<FormSectionProps> = ({
   title,
   subTitle,
   children,
+  action,
   ...rest
 }) => {
   return (
@@ -25,6 +27,7 @@ const FormSection: React.FC<FormSectionProps> = ({
         avatar={icon}
         title={title}
         subheader={subTitle ? subTitle : ''}
+        action={action ? action : ''}
       />
       <Box
         sx={{

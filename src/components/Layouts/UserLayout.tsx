@@ -57,6 +57,7 @@ const UserLayout: React.FC<UserLayoutType> = ({ children }) => {
       <Box
         sx={{
           minHeight: '100vh',
+          height: '100%',
           background: Colors.white,
         }}
       >

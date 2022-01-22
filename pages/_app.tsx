@@ -14,7 +14,7 @@ import createCache from '@emotion/cache'
 import moment from 'moment'
 import '@css/main.scss'
 import { StylesProvider } from '@mui/styles'
-import { ConfirmProvider } from '@components/Confirm'
+import { ConfirmProvider } from 'material-ui-confirm'
 import { defaultConfirmationOptions } from '@constants/common.constants'
 import '@locales/i18n'
 

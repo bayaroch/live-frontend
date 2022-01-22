@@ -12,6 +12,15 @@ const staticSmartTime = (time: string | number): string => {
   }
 }
 
+const currency = (data: number): string => {
+  const formatter = Number(data).toLocaleString('mn-MN', {
+    style: 'decimal',
+    minimumFractionDigits: 0,
+  })
+  return `${formatter} ₮`
+}
+
 export const CommonHelper = {
   staticSmartTime,
+  currency,
 }

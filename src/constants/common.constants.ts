@@ -1,4 +1,4 @@
-import { ConfirmOptions } from '@components/Confirm/types'
+import { ConfirmOptions } from 'material-ui-confirm'
 
 export const defaultConfirmationOptions: ConfirmOptions = {
   confirmationButtonProps: {

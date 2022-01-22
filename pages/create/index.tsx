@@ -2,13 +2,18 @@ import PageWithLayoutType from '@constants/page'
 import withAuth from '@containers/HOC/withAuth'
 import UserLayout from '@components/Layouts/UserLayout'
 import { Box, Container } from '@mui/material'
-import EventCreate from '@containers/EventCreate'
+import dynamic from 'next/dynamic'
+import PageLoader from '@components/PageLoader'
+
+const EventCreate = dynamic(() => import('@containers/EventCreate'), {
+  loading: () => <PageLoader />,
+})
 
 const CreatePage: PageWithLayoutType = () => {
   return (
     <UserLayout>
       <Container maxWidth="md">
-        <Box sx={{ marginTop: 4, marginBottom: 4 }}>
+        <Box sx={{ paddingTop: 4, paddingBottom: 4 }}>
           <EventCreate />
         </Box>
       </Container>
